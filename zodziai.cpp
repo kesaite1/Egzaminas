@@ -1,5 +1,19 @@
 #include "my.h"
 
+void rasoZodziuSkaiciu(map<string, set<int>>& zodziuEiles,
+                    map<string, int>& zodziuSkaicius, string filename){
+
+}
+
+void CrossReference(map<string, set<int>>& zodziuEiles,
+                    map<string, int>& zodziuSkaicius, string filename){
+
+}
+
+void rasoURL(set<string>& urls, string filename){
+
+}
+
 string istrintiZodi(string& zodis){
 
     string istrintas;
@@ -55,6 +69,9 @@ int main() {
     set<string> urls;
 
     failoSkaitymas(zodziuSkaicius, zodziuEiles, urls);
+    rasoZodziuSkaiciu(zodziuEiles, zodziuSkaicius, "Zodziu_skaicius.txt");
+    CrossReference(zodziuEiles,zodziuSkaicius, "Cross_reference.txt");
+    rasoURL(urls, "URLs.txt");
 
     return 0;
 }
