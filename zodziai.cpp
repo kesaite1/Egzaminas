@@ -46,9 +46,12 @@ string istrintiZodi(string& zodis){
     return istrintas;
 }
 //--------------------------------------------------------------------
-bool yraURL (const string zodis){
-
+bool yraURL(const string& zodis) {
+    return zodis.find("http://") != std::string::npos ||
+           zodis.find("https://") != std::string::npos ||
+           zodis.find("www.") != std::string::npos;
 }
+
 //--------------------------------------------------------------------
 void failoSkaitymas(map<string, int>& zodziuSkaicius,
                     map<string, set<int>>& zodziuEiles,
@@ -56,11 +59,12 @@ void failoSkaitymas(map<string, int>& zodziuSkaicius,
 
     string eile;
     int eilesNr = 1;
-    ifstream fd ("tekstas.txt");
+    ifstream fd ("test.txt");
 
-    if (!fd)
+    if (!fd.is_open())
     {
         cerr << "Nepavyko atidaryti failo\n";
+        return;
     }
 
     while (getline(fd, eile))

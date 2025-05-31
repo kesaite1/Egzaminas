@@ -67,5 +67,7 @@ using std::set;
 using std::isalpha;
 using std::isdigit;
 using std::tolower;
+using std::regex_match;
+using std::regex;
 
 #endif
