@@ -19,7 +19,7 @@
 #include <shlobj.h>
 #include <map>
 #include <set>
-#include <regex>
+#include <cstdlib> 
 
 using std::cout;
 using std::cin;
@@ -67,7 +67,5 @@ using std::set;
 using std::isalpha;
 using std::isdigit;
 using std::tolower;
-using std::regex_match;
-using std::regex;
 
 #endif
