@@ -1,23 +1,44 @@
 #include "my.h"
 
-void rasoZodziuSkaiciu(map<string, set<int>>& zodziuEiles,
-                    map<string, int>& zodziuSkaicius, string filename){
+void rasoZodziuSkaiciu( map<string, int>& zodziuSkaicius, string filename){
+    ofstream fr (filename);
 
+    for (const auto& [zodziai, skaicius] : zodziuSkaicius){
+        if (skaicius > 1){
+            fr << left << setw(10) << zodziai << ": " << left << skaicius << "\n";
+        }
+    }
+    fr.close();
 }
+//--------------------------------------------------------------------
+void CrossReference(map<string, set<int>>& zodziuEiles, map<string, int>& zodziuSkaicius, string filename){
+    ofstream fr (filename);
 
-void CrossReference(map<string, set<int>>& zodziuEiles,
-                    map<string, int>& zodziuSkaicius, string filename){
-
+    for (const auto& [zodziai, eiles] : zodziuEiles){
+        if (zodziuSkaicius.at(zodziai) > 1){
+            fr << left << setw(15) << zodziai << ": ";
+            for (int eile : eiles){
+                fr << left << eile << " ";
+            }
+            fr << "\n";
+        }
+    }
+fr.close();
 }
-
+//--------------------------------------------------------------------
 void rasoURL(set<string>& urls, string filename){
+    ofstream fr (filename);
 
+    for (const auto& url : urls){
+        fr << url << "\n";
+    }
+    fr.close();
 }
-
+//--------------------------------------------------------------------
 string istrintiZodi(string& zodis){
 
     string istrintas;
-    for(char zd : zodis) {
+    for (char zd : zodis) {
         if (isalpha(zd) || isdigit(zd)) {
             istrintas += tolower(zd);
         }
@@ -51,7 +72,7 @@ void failoSkaitymas(map<string, int>& zodziuSkaicius,
                 urls.insert(zodis);
         }else {
             string istrintas = istrintiZodi(zodis);
-            if(!istrintas.empty()) {
+            if (!istrintas.empty()) {
                 zodziuSkaicius[istrintas]++;
                 zodziuEiles[istrintas].insert(eilesNr);
             }
@@ -69,7 +90,7 @@ int main() {
     set<string> urls;
 
     failoSkaitymas(zodziuSkaicius, zodziuEiles, urls);
-    rasoZodziuSkaiciu(zodziuEiles, zodziuSkaicius, "Zodziu_skaicius.txt");
+    rasoZodziuSkaiciu(zodziuSkaicius, "Zodziu_skaicius.txt");
     CrossReference(zodziuEiles,zodziuSkaicius, "Cross_reference.txt");
     rasoURL(urls, "URLs.txt");
 
