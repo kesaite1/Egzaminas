@@ -111,10 +111,10 @@ fd.close();
 }
 //--------------------------------------------------------------------
 int main() {
-
+    //  std::locale::global(std::locale("en_US.UTF-8"));
     //std::cout << "Program started.\n";
     //system("pause");
-
+    //SetConsoleOutputCP(CP_UTF8);
     map<string, int> zodziuSkaicius;
     map<string, set<int>> zodziuEiles;
     set<string> urls;

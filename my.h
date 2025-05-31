@@ -20,6 +20,10 @@
 #include <map>
 #include <set>
 #include <cstdlib> 
+#include <io.h>
+#include <fcntl.h>
+#include <locale>
+#include <codecvt>
 
 using std::cout;
 using std::cin;
@@ -67,5 +71,10 @@ using std::set;
 using std::isalpha;
 using std::isdigit;
 using std::tolower;
+using std::locale;
+using std::wifstream;
+using std::wofstream;
+using std::wcerr;
+using std::wstring;
 
 #endif
