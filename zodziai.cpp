@@ -57,7 +57,6 @@ wstring istrintiZodi(wstring& zodis){
 
      wstring istrintas;
      for (wchar_t zd : zodis) {
-         //if (iswalpha(zd) || iswdigit(zd)) {
          if (iswalpha(zd)) {
 
              istrintas += towlower(zd);
@@ -97,7 +96,7 @@ void failoSkaitymas(map<wstring, int>& zodziuSkaicius,
             zodis.erase(0,1);
             while (!zodis.empty() && iswpunct(zodis.back()))
             zodis.pop_back();
-            
+
             if (yraURL(zodis)){
                 urls.insert(zodis);
         }else {
@@ -124,6 +123,6 @@ int main() {
     CrossReference(zodziuEiles,zodziuSkaicius, L"Cross_reference.txt");
     rasoURL(urls, L"URLs.txt");
 
-    system("pause");
+    //system("pause");
     return 0;
 }
