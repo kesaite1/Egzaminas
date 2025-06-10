@@ -24,6 +24,7 @@
 #include <fcntl.h>
 #include <locale>
 #include <codecvt>
+#include <cwctype>
 
 using std::cout;
 using std::cin;
@@ -68,13 +69,12 @@ using std::swap;
 using std::copy;
 using std::map;
 using std::set;
-using std::isalpha;
-using std::isdigit;
-using std::tolower;
-using std::locale;
 using std::wifstream;
 using std::wofstream;
 using std::wcerr;
 using std::wstring;
+using std::locale;
+using std::codecvt_utf8;
+using std::wstringstream;
 
 #endif
