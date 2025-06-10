@@ -57,7 +57,9 @@ wstring istrintiZodi(wstring& zodis){
 
      wstring istrintas;
      for (wchar_t zd : zodis) {
-         if (iswalpha(zd) || iswdigit(zd)) {
+         //if (iswalpha(zd) || iswdigit(zd)) {
+         if (iswalpha(zd)) {
+
              istrintas += towlower(zd);
          }
      }
@@ -89,7 +91,13 @@ void failoSkaitymas(map<wstring, int>& zodziuSkaicius,
     {
         wstringstream ss(eile);
         wstring zodis;
+
         while (ss>>zodis){
+            while (!zodis.empty() && iswpunct(zodis.front()))
+            zodis.erase(0,1);
+            while (!zodis.empty() && iswpunct(zodis.back()))
+            zodis.pop_back();
+            
             if (yraURL(zodis)){
                 urls.insert(zodis);
         }else {
