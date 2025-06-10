@@ -1,9 +1,10 @@
 #include "my.h"
 
 void rasoZodziuSkaiciu( map<wstring, int>& zodziuSkaicius, wstring filename){
-    wofstream fr;
-    fr.open(filename.c_str());
-    fr.imbue(locale(fr.getloc(), new codecvt_utf8<wchar_t>));
+    //wofstream fr;
+    wofstream fr(filename.c_str());
+    fr.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
+    //fr.imbue(locale(fr.getloc(), new codecvt_utf8<wchar_t>));
     if (!fr.is_open()) {
     cerr << "Failed to open 1 file for writing.\n";
     return;
@@ -17,9 +18,10 @@ void rasoZodziuSkaiciu( map<wstring, int>& zodziuSkaicius, wstring filename){
 }
 //--------------------------------------------------------------------
 void CrossReference(map<wstring, set<int>>& zodziuEiles, map<wstring, int>& zodziuSkaicius, wstring filename){
-    wofstream fr;
-    fr.open(filename.c_str());
-    fr.imbue(locale(fr.getloc(), new codecvt_utf8<wchar_t>));
+    //wofstream fr;
+    wofstream fr(filename.c_str());
+    fr.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
+    //fr.imbue(locale(fr.getloc(), new codecvt_utf8<wchar_t>));
     if (!fr.is_open()) {
     cerr << "Failed to open 2 file for writing.\n";
     return;
@@ -38,9 +40,10 @@ fr.close();
 }
 //--------------------------------------------------------------------
 void rasoURL(set<wstring>& urls, wstring filename){
-    wofstream fr;
-    fr.open(filename.c_str());
-    fr.imbue(locale(fr.getloc(), new codecvt_utf8<wchar_t>));
+    //wofstream fr;
+    wofstream fr(filename.c_str());
+    fr.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
+    //fr.imbue(locale(fr.getloc(), new codecvt_utf8<wchar_t>));
     if (!fr.is_open()) {
     cerr << "Failed to open 3 file for writing.\n";
     return;
