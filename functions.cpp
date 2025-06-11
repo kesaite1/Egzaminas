@@ -6,7 +6,7 @@ void rasoZodziuSkaiciu( map<wstring, int>& zodziuSkaicius, wstring filename){
     wofstream fr(filename.c_str());
     fr.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
     if (!fr.is_open()) {
-    cerr << "Failed to open 1 file for writing.\n";
+    cerr << "Nepavyko sukurti 1 failo rasymui.\n";
     return;
 }
 fr << left << setw(22) << "Zodziai" << "Pasikartojimu skaicius\n";
@@ -23,7 +23,7 @@ void CrossReference(map<wstring, set<int>>& zodziuEiles, map<wstring, int>& zodz
     wofstream fr(filename.c_str());
     fr.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
     if (!fr.is_open()) {
-    cerr << "Failed to open 2 file for writing.\n";
+    cerr << "Nepavyko sukurti 2 failo rasymui.\n";
     return;
 }
 fr << left << setw(22) << "Zodis" << "Eiluciu nr. \n";
@@ -44,7 +44,7 @@ void rasoURL(set<wstring>& urls, wstring filename){
     wofstream fr(filename.c_str());
     fr.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
     if (!fr.is_open()) {
-    cerr << "Failed to open 3 file for writing.\n";
+    cerr << "Nepavyko sukurti 3 failo rasymui.\n";
     return;
 }
     fr << "URL adresai: \n";
@@ -79,8 +79,17 @@ void failoSkaitymas(map<wstring, int>& zodziuSkaicius,
                     set<wstring>& urls) {
 
     wstring eile;
+    string file;
     int eilesNr = 1;
-    wifstream fd ("tekstas.txt");
+    
+    cout << "Iveskite teksto failo pavadinima tokiu formatu 'pavadinimas.txt': \n";
+    cin >> file;
+    if (file.size() < 4 || file.substr(file.size() - 4) != ".txt") {
+
+				file += ".txt";  // automatiskia prideda .txt failo pavadinime
+            }
+
+    wifstream fd (file);
     fd.imbue(locale(fd.getloc(), new codecvt_utf8<wchar_t>));
 
     if (!fd.is_open())
