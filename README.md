@@ -47,8 +47,16 @@ Svarbiausi failai, įeinantys į projektą:
 
 **Main funkcija**
 
-<pre> ```cpp int main() {SetConsoleOutputCP(CP_UTF8);
- map<wstring, int> zodziuSkaicius; map<wstring, set<int>> zodziuEiles; set<wstring> urls; failoSkaitymas(zodziuSkaicius, zodziuEiles, urls);     rasoZodziuSkaiciu(zodziuSkaicius, L"Zodziu_skaicius.txt"); CrossReference(zodziuEiles,zodziuSkaicius, L"Cross_reference.txt"); rasoURL(urls, L"URLs.txt"); cout << "Programa ivykdyta. Failai sukurti.\n"; return 0; }``` </pre>
+<pre>  int main() {SetConsoleOutputCP(CP_UTF8);
+map<wstring, int> zodziuSkaicius; 
+map<wstring, set<int>> zodziuEiles; 
+set<wstring> urls; 
+failoSkaitymas(zodziuSkaicius, zodziuEiles, urls);     rasoZodziuSkaiciu(zodziuSkaicius, L"Zodziu_skaicius.txt"); 
+CrossReference(zodziuEiles,zodziuSkaicius, L"Cross_reference.txt"); 
+rasoURL(urls, L"URLs.txt"); 
+cout << "Programa ivykdyta. Failai sukurti.\n"; 
+return 0; 
+} </pre>
 
 
 
