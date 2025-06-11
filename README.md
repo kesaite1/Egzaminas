@@ -62,4 +62,13 @@ return 0;
 } </pre>
 
 
+![image](https://github.com/user-attachments/assets/98b9425e-da1e-4b68-b33f-95c55f3fb8fa)
+![image](https://github.com/user-attachments/assets/739e3e47-3bfa-489c-9d75-8f9a4b630bc4)
+![image](https://github.com/user-attachments/assets/45d8098e-64d6-4eba-85eb-ddf32b865991)
+
+
+
+
+
+
 
