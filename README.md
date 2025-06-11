@@ -1,6 +1,6 @@
-#Egzamino užduotis
+# Egzamino užduotis
 
-##Teksto apdorojimo programa
+## Teksto apdorojimo programa
 
 **Aprašymas**
 
@@ -46,6 +46,7 @@ Svarbiausi failai, įeinantys į projektą:
 
 
 **Main funkcija**
+
 `int main() {
     SetConsoleOutputCP(CP_UTF8);
     map<wstring, int> zodziuSkaicius;
